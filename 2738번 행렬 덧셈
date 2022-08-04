@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class Main {
+    static int[][]arr = new int[101][101];
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N,M;
+        N=sc.nextInt();
+        M=sc.nextInt();
+        for (int i = 1; i<=N; i++) {
+            for (int j = 1; j<=M; j++) {
+                int k;
+                k = sc.nextInt();
+                Main.arr[i][j] = k;
+            }
+        }
+        for (int i = 1; i<=N; i++) {
+            for (int j =1; j<=M; j++) {
+                int k;
+                k = sc.nextInt();
+                Main.arr[i][j] += k;
+                System.out.print(Main.arr[i][j]);
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+        sc.close();
+
+
+    }
+}
