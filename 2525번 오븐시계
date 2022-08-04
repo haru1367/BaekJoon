@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int a,b,c;
+    cin>>a>>b>>c;
+    a = a* 60 + b+c;
+    if (a>=1440) {
+        a-=1440;
+    }
+    cout << a/60 << endl;
+    cout << a%60 << endl;
+}
