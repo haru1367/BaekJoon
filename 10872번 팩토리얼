@@ -1,0 +1,19 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int factorial(int k) {
+	if (k > 2) {
+		k *= factorial(k - 1);
+	}
+	return k;
+}
+int main() {
+	int N;
+	cin >> N;
+	int ans=1;
+	if (N != 0) {
+		ans = factorial(N);
+	}
+	cout << ans << endl;
+	
+}
