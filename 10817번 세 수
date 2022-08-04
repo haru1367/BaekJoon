@@ -1,0 +1,15 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+int main(){
+    vector<int>num;
+    for (int i = 1; i<=3; i++) {
+        int k;
+        cin>>k;
+        num.push_back(k);
+    }
+    sort(num.begin(),num.end());
+    cout << num[1] << '\n';
+}
