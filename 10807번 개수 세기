@@ -1,0 +1,16 @@
+#include <iostream>
+#include <map>
+using namespace std;
+int main() {
+	int N;
+	cin >> N;
+	map<int, int>m;
+	for (int i = 1; i <= N; i++) {
+		int k;
+		cin >> k;
+		m[k]++;
+	}
+	int j;
+	cin >> j;
+	cout << m[j] << '\n';
+}
