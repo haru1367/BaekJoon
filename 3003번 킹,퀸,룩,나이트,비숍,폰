@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main() {
+	for (int i = 1; i <= 6; i++) {
+		int k;
+		cin >> k;
+		if (i == 1 || i == 2) {
+			cout << 1 - k << '\n';
+		}
+		else if (i == 3 || i == 4 || i == 5) {
+			cout << 2 - k << '\n';
+		}
+		else {
+			cout << 8 - k << '\n';
+		}
+	}
+}
