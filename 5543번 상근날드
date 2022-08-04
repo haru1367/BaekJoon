@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int result = 2000;
+    for (int i = 1; i<=3; i++) {
+        int t;
+        cin>>t;
+        result = min(t,result);
+    }
+    int result1 = 2000;
+    for (int i = 1; i<=2; i++) {
+        int t;
+        cin>>t;
+        result1 = min(t,result1);
+    }
+    cout << result+result1-50 <<'\n';
+}
