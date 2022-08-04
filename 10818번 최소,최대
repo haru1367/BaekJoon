@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main() {
+	int N;
+	cin >> N;
+	int maxn = -1000000;
+	int minn = 1000000;
+	for (int i = 1; i <= N; i++) {
+		int a;
+		cin >> a;
+		maxn = max(maxn, a);
+		minn = min(minn, a);
+	}
+	cout << minn << endl;
+	cout << maxn << endl;
+}
