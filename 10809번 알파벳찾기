@@ -1,0 +1,17 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+	string str;
+    cin>>str;
+	for (char alpha = 'a'; alpha <= 'z'; alpha++) {
+		string ss = "";
+		ss += alpha;
+		if (str.find(ss) == string::npos) {
+			cout << "-1 ";
+		}
+		else {
+			cout << str.find(ss) << " ";
+		}
+	}
+}
