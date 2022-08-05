@@ -1,0 +1,18 @@
+#include <iostream>
+#include <cmath>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+	int N, k;
+	cin >> N >> k;
+	vector<int>aa;
+	for (int i = 1; i <= N; i++) {
+		int x;
+		cin >> x;
+		aa.push_back(x);
+	}
+	sort(aa.begin(), aa.end(), greater<int>());
+	cout << aa[k - 1] << '\n';
+}
