@@ -1,0 +1,46 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main() {
+	int T;
+	cin >> T;
+	for (int i = 1; i <= T; i++) {
+		double cm, kg;
+		cin >> cm >> kg;
+		double bmi = kg / ((cm / (double)100) * (cm / (double)100));
+		if (cm < 140.1) {
+			cout << 6 << '\n';
+		}
+		else if (cm >= 140.1 && cm < 146) {
+			cout << 5 << '\n';
+		}
+		else if (cm >= 146 && cm < 159) {
+			cout << 4 << '\n';
+		}
+		else if (cm >= 159 && cm < 161) {
+			if (bmi >= 16.0 && bmi < 35.0) {
+				cout << 3 << '\n';
+			}
+			else {
+				cout << 4 << '\n';
+			}
+		}
+		else if (cm >= 161 && cm < 204) {
+			if (bmi >= 20.0 && bmi < 25.0) {
+				cout << 1 << '\n';
+			}
+			else if ((bmi >= 18.5 && bmi < 20.0) || (bmi >= 25.0 && bmi < 30.0)) {
+				cout << 2 << '\n';
+			}
+			else if ((bmi >= 16.0 && bmi < 18.5) || (bmi >= 30.0 && bmi < 35.0)) {
+				cout << 3 << '\n';
+			}
+			else {
+				cout << 4 << '\n';
+			}
+		}
+		else {
+			cout << 4 << '\n';
+		}
+	}
+}
