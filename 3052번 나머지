@@ -1,0 +1,17 @@
+#include <iostream>
+#include <map>
+using namespace std;
+int main() {
+	map<int, int>m;
+	while (true) {
+		int a;
+		cin >> a;
+		if (cin.eof() == true) {
+			break;
+		}
+		else {
+			m[a % 42]++;
+		}
+	}
+	cout << m.size() << endl;
+}
