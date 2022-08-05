@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+#include <map>
+using namespace std;
+int main() {
+	map<int, int>m1;
+	map<int, int>m2;
+	for (int i = 1; i <= 3; i++) {
+		int x, y;
+		cin >> x >> y;
+		m1[x]++;
+		m2[y]++;
+	}
+	for (auto k = m1.begin(); k != m1.end(); k++) {
+		if (k->second == 1) {
+			cout << k->first << '\n';
+		}
+	}
+	for (auto k = m2.begin(); k != m2.end(); k++) {
+		if (k->second == 1) {
+			cout << k->first << '\n';
+		}
+	}
+}
