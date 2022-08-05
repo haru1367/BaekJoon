@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+#include <algorithm>
+using namespace std;
+int main() {
+	int M, N;
+	cin >> M >> N;
+	vector<int>prime;
+	for (int i = M; i <= N; i++) {
+		if (i == 2 || i == 3) {
+			prime.push_back(i);
+		}
+		else if (i>=4) {
+			bool check = true;
+			for (int j = 2; j <= sqrt(i); j++) {
+				if (i % j == 0) {
+					check = false;
+					break;
+				}
+			}
+			if (check == true) {
+				prime.push_back(i);
+			}
+		}
+	}
+	int sum = 0; 
+	if (prime.size() == 0) {
+		cout << -1;
+	}
+	else {
+		
+		for (int i = 0; i < prime.size(); i++) {
+			sum += prime[i];
+		}
+		cout << sum << endl;
+		cout << *min_element(prime.begin(), prime.end()) << endl;
+	}
+}
