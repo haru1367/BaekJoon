@@ -1,0 +1,18 @@
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+using namespace std;
+int main() {
+	int N;
+	cin >> N;
+	int index = 2;
+	while (N > 1) {
+		if (N % index == 0) {
+			N /= index;
+			cout << index << endl;
+		}
+		else {
+			index++;
+		}
+	}
+}
