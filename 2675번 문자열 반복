@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+	int T;
+	cin >> T;
+	for (int i = 1; i <= T; i++) {
+		int R;
+		cin >> R;
+		string str;
+		cin >> str;
+		string sstr = "";
+		for (int j = 0; j < str.size(); j++) {
+			for (int k = 1; k <= R; k++) {
+				sstr += str[j];
+			}
+		}
+		cout << sstr << endl;
+	}
+}
