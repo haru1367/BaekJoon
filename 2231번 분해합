@@ -1,0 +1,36 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main() {
+	int N;
+	cin >> N;
+	int goal = N;
+	int sizeN = N;
+	int alpha = 0;
+	vector<int>num;
+	while (sizeN >= 1) {
+		sizeN /= 10;
+		alpha++;
+	}
+	while (true) {
+		if (N == goal - 9 * alpha) {
+			break;
+		}
+		int k = N;
+		int sum = k;
+		while (k > 0) {
+			sum += k % 10;
+			k -= k % 10;
+			k /= 10;
+		}
+		if (sum == goal) {
+			num.push_back(N);
+		}
+		N--;
+	}
+    if (num.size() ==0) {
+        cout << 0 << endl;
+    } else {
+        cout << num[num.size() - 1] << endl;
+    }
+}
