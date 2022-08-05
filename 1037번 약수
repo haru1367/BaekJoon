@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cmath>
+#include <vector>
+#include <algorithm>
+using namespace std;
+int main() {
+	int N;
+	cin >> N;
+	vector<int>num;
+	for (int i = 1; i <= N; i++) {
+		int a;
+		cin >> a;
+		num.push_back(a);
+	}
+	sort(num.begin(), num.end());
+	if (N % 2 == 0) {
+		cout << num[0] * num[num.size() - 1] << '\n';
+	}
+	else {
+		cout << num[(N - 1) / 2] * num[(N - 1) / 2] << '\n';
+	}
+}
