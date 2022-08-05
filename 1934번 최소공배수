@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+int gcd(int a, int b) {
+	int c;
+	while (b != 0)	{
+		c = a % b;
+		a = b;
+		b = c;
+	}
+	return a;
+}
+
+int main() {
+	int T;
+	cin >> T;
+	vector<pair<int, int>>num;
+	for (int i = 1; i <= T; i++) {
+		int a, b;
+		cin >> a >> b;
+		cout << a * b / gcd(a, b) << '\n';
+	}
+		
+}
