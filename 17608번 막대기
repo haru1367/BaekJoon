@@ -1,0 +1,28 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+int main() {
+	int N;
+	cin >> N;
+	vector<int>num;
+	int maxn = 0;
+	for (int i = 1; i <= N; i++) {
+		int k;
+		cin >> k;
+		num.push_back(k);
+		maxn = max(k, maxn);
+	}
+	int st = num[num.size() - 1];
+	int answer = 1;
+	for (int i = num.size() - 2; i >= 0; i--) {
+		if (st == maxn) {
+			break;
+		}
+		if (st < num[i]) {
+			answer++;
+			st = num[i];
+		}
+	}
+	cout << answer << '\n';
+}
