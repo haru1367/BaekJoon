@@ -1,0 +1,17 @@
+#include <iostream>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+int combination(int n, int k) {
+	if (n == k || k == 0) {
+		return 1;
+	}
+	else {
+		return combination(n - 1, k - 1) + combination(n - 1, k);
+	}
+}
+int main() {
+	int N, K;
+	cin >> N >> K;
+	cout << combination(N, K) << '\n';
+}
