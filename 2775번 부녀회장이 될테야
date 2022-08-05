@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main() {
+	int T;
+	cin >> T;
+	vector<vector<int>>vec(15, vector<int>(15, 0));
+	for (int i = 0; i < vec[0].size(); i++) {
+		vec[0][i] = i;
+	}
+	for (int i = 1; i < vec.size(); i++) {
+		for (int j = 1; j < vec[0].size(); j++) {
+			int sum = 0;
+			for (int k = 1; k <= j; k++) {
+				sum += vec[i - 1][k];
+			}
+			vec[i][j] = sum;
+		}		
+	}
+	for (int i = 1; i <= T; i++) {
+		int k, n;
+		cin >> k >> n;
+		cout << vec[k][n] << endl;
+	}
+}
