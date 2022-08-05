@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int arr[10][10];
+int main() {
+    int maxk = -1;
+    int resulti= 0;
+    int resultj=0;
+    for (int i = 1; i<=9; i++) {
+        for (int j = 1; j<=9; j++) {
+            int k;
+            cin>>k;
+            arr[i][j] = k;
+            if (maxk < k) {
+                maxk = k;
+                resulti =i;
+                resultj = j;
+            }
+        }
+    }
+    cout << maxk <<'\n';
+    cout << resulti << " " << resultj;
+}
