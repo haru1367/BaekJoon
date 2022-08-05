@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+int main() {
+	while (true) {
+		string str;
+		cin >> str;
+		if (str == "0") {
+			break;
+		}
+		string rstr(str.rbegin(), str.rend());
+		if (str == rstr) {
+			cout << "yes" << '\n';
+		}
+		else {
+			cout << "no" << '\n';
+		}
+	}
+}
