@@ -1,0 +1,33 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.HashSet;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String>arr = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        sc.nextLine();
+        for (int i = 1; i<= N; i++) {
+            String str = sc.nextLine();
+            arr.add(str);
+        }
+        sc.close();
+        StringBuilder sstr = new StringBuilder();
+        for (int i = 0; i<arr.get(0).length(); i++) {
+            HashSet<Character> comp = new HashSet<>();
+            for (String s : arr) {
+                comp.add(s.charAt(i));
+            }
+            if (comp.size() == 1) {
+                sstr.append(arr.get(0).charAt(i));
+            } else {
+                sstr.append('?');
+            }
+        }
+        System.out.println(sstr);
+
+
+
+    }
+}
