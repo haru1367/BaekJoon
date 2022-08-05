@@ -1,0 +1,67 @@
+#include <iostream>
+#include <map>
+#include <vector>
+#include <cmath>
+#include <algorithm>
+using namespace std;
+int main() {
+	int K;
+	cin >> K;
+	vector<pair<int, int>>m;
+	map<pair<int, int>, int>dic;
+	pair<int, int>xy = { 0,0 };
+	for (int i = 1; i <= 6; i++) {
+		int dir;
+		int distance;
+		cin >> dir >> distance;
+		switch (dir) {
+		case 1:
+			xy.first += distance;
+			m.push_back(xy);
+			break;
+		case 2:
+			xy.first -= distance;
+			m.push_back(xy);
+			break;
+		case 3:
+			xy.second -= distance;
+			m.push_back(xy);
+			break;
+		case 4:
+			xy.second += distance;
+			m.push_back(xy);
+			break;
+		}
+		dic[xy]++;
+	}
+	int maxx = 0;
+	int maxy = 0;
+	int minx = 0;
+	int miny = 0;
+	for (int i = 0; i < m.size(); i++) {
+		maxx = max(m[i].first, maxx);
+		maxy = max(m[i].second, maxy);
+		minx = min(m[i].first, minx);
+		miny = min(m[i].second, miny);
+	}
+	vector<pair<int, int>>mxy;
+	mxy.push_back({ maxx,maxy });
+	mxy.push_back({ maxx,miny });
+	mxy.push_back({ minx,maxy });
+	mxy.push_back({ minx,miny });
+	int S = (maxx - minx) * (maxy - miny);
+	pair<int, int>non_xy;
+	for (int i = 0; i < mxy.size(); i++) {
+		if (dic.find(mxy[i]) == dic.end()) {
+			non_xy = mxy[i];
+		}
+	}
+	pair<int, int>mid_xy;
+	for (int i = 0; i < m.size(); i++) {
+		if (m[i].first > minx && m[i].first < maxx && m[i].second > miny && m[i].second < maxy) {
+			mid_xy = m[i];
+		}
+	}
+	int s = abs(mid_xy.first - non_xy.first) * abs(mid_xy.second - non_xy.second);
+	cout << (S - s) * K << '\n';
+}
