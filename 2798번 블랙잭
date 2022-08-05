@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main() {
+	int N, M;
+	cin >> N >> M;
+	vector<int>card;
+	for (int i = 1; i <= N; i++) {
+		int num;
+		cin >> num;
+		card.push_back(num);
+	}
+	int minn = M;
+	for (int i = 0; i < card.size()-2; i++) {
+		for (int j = i + 1; j < card.size() - 1; j++) {
+			for (int k = j + 1; k < card.size(); k++) {
+				int sum = card[i] + card[j] + card[k];
+				if (sum <= M && minn > M - sum) {
+					minn = M - sum;
+				}
+			}
+		}
+	}
+	cout << M-minn << endl;
+}
