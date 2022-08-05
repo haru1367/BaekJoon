@@ -1,0 +1,37 @@
+#include <iostream>
+#include <algorithm>
+#include <cmath>
+#include <vector>
+using namespace std;
+int main() {
+	vector<int>num;
+	int sum = 0;
+	for (int i = 1; i <= 9; i++) {
+		int k;
+		cin >> k;
+		sum += k;
+		num.push_back(k);
+	}
+	sort(num.begin(), num.end());
+	vector<bool>check(2,false);
+	for (int i = 1; i <= 7; i++) {
+		check.push_back(true);
+	}
+	do {
+		int sum1 = sum;
+		for (int j = 0; j < check.size(); j++) {
+			if (check[j] == false) {
+				sum1 -= num[j];
+			}
+		}
+		if (sum1 == 100) {
+			for (int j = 0; j < check.size(); j++) {
+				if (check[j] == true) {
+					cout << num[j] << '\n';
+				}
+			}
+			break;
+		}
+
+	} while (next_permutation(check.begin(), check.end()));
+}
